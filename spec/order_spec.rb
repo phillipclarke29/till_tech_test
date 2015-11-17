@@ -1,4 +1,5 @@
 require 'order'
+require 'menu'
 
 describe Order do
 
@@ -9,13 +10,14 @@ describe Order do
   end
 
   it 'can receive menu items' do
-    subject.add_item(menu_item1)
+    subject.add_item(item1)
     expect(subject.order.count).to eq(1)
   end
 
   it 'can add two items together' do
-    subject.add_item(item1)
-    subject.add_item(item2)
+    subject.add_item(menu[item1])
+    subject.add_item(menu[item2])
+    c
     subject.create_total
     expect(subject.total_price).to eq(8.40)
   end
